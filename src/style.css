@@ -1,0 +1,280 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #3f5d97;
+  align-items: center;
+  color: white;
+}
+.headerleft {
+  display: flex;
+  padding-top: 5px;
+}
+.headerleft div {
+  display: flex;
+  padding-right: 25px;
+}
+.headerleft div i {
+  padding: 5px 0px 0px 0px;
+}
+.headerright {
+  padding: 8px;
+
+  background-color: #f69400;
+}
+
+/* navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0px;
+}
+.navbarleft {
+  padding-left: 20px;
+}
+.navbarright ul {
+  list-style: none;
+  display: flex;
+  padding-top: 50px;
+}
+.navbarright ul li {
+  padding: 0px 0px 0px 25px;
+  color: #3f5d97;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+/* slider */
+
+.slider img {
+  width: 100%;
+  height: 100vh;
+}
+.slider {
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+}
+.slides {
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+  outline: none;
+  border: none;
+}
+
+.slide {
+  width: 20%;
+  transition: 2s;
+  font-size: 20px;
+}
+.slidetext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* manual navigation */
+.navigation-manual {
+  position: absolute;
+  width: 100%;
+  margin-top: 530px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid rgb(241, 237, 237);
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+input[type="radio"]:focus-visible {
+  outline: none;
+  border: none;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 20px;
+}
+
+.manual-btn:hover {
+  background-color: red;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+#radio4:checked ~ .first {
+  margin-left: -60%;
+}
+
+.slide div {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 400px;
+  text-align: center;
+  left: 34%;
+}
+.slide div h1 {
+  font-size: 68px;
+  font-weight: bolder;
+}
+.slide button {
+  border: 1px solid #f69400;
+  background-color: #f69400;
+  padding: 13px 25px;
+  border-radius: 20px;
+  margin-top: -500px;
+  margin-left: -24px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* content1 */
+.content1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 85px 200px 80px 200px;
+  text-align: center;
+}
+
+.content1 img {
+  border: 4px solid rgb(227, 226, 226);
+  border-radius: 50%;
+  padding: 10px;
+  width: 160px;
+}
+
+/* content2 */
+.content2 {
+  display: flex;
+
+  padding: 40px 220px;
+}
+.content2left {
+  padding-right: 150px;
+}
+.content2left img {
+  width: 360px;
+}
+
+.content2left div{
+    background-color: #f69400;
+    color: white;
+    width: 202px;
+    height: 140px;
+    position: absolute;
+    margin-top: -100px;
+    margin-left: 240px;
+    padding: 20px 0px 0px 18px;
+    text-align: justify;
+
+}
+.content2left div h1{
+    font-size: 26px;
+}
+.content2right h1{
+ color: #264279;
+}
+.content2right p{
+    color: gray;
+    padding-top: 20px;
+}
+.content2right button{
+    padding: 6px 10px;
+    border-radius: 15px;
+    background-color: #f69400;
+    color: white;
+    border: none;
+    margin-top: 10px;
+}
+
+
+/* content3 */
+.content3{
+  padding-top: 100px;
+  
+}
+
+.content3 div{
+  display: flex;
+  justify-content: center;
+  
+
+}
+.content3inner div img{
+width: 100%;
+}
+.content3inner div {
+  
+  display: flex;
+  flex-direction: column;
+  margin:30px;
+  width: 240px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px rgb(243, 241, 241);
+  
+}
+.content3inner h3,p{
+  padding-left: 20px;
+  padding-top:10px ;
+}
+.content3inner p{
+  color: gray;
+}
+
+i{
+  border: none;
+  width: 20px;
+  height: 20px;
+  padding:8px 5px 5px 5px;
+  border-radius: 50%;
+  color: white;
+  margin: 20px 0px 10px 20px;
+
+  background-color: #f69400;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1100px) {
+    .content2 {
+    flex-wrap: wrap;
+
+      }
+.content2right h1{
+    padding-top: 100px;
+
+}
+.content3 div{
+flex-wrap: wrap;
+
+}
+
+}
