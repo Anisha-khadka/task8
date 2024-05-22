@@ -1,7 +1,7 @@
 import React from "react";
 import image1 from "../Images/img10.png";
 import { Category1 } from "./Category1";
-
+import image2 from "../Images/img15.png"
 export default function Content() {
   return (
     <>
@@ -40,8 +40,8 @@ export default function Content() {
       </div>
 
       <div className="content3">
-        <h1 style={{textAlign:"center"}}>CC Cleaning Service</h1>
-        <p style={{textAlign:"center"}}>
+        <h1 style={{textAlign:"center",color:"#3f5d97"}}>CC Cleaning Service</h1>
+        <p style={{textAlign:"center",color:"gray"}}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium
           nemo, minima vitae
         </p>
@@ -54,6 +54,41 @@ export default function Content() {
           <i class="fa-solid fa-arrow-right"></i>
           </div>
         ))}
+        </div>
+      </div>
+      
+      <div className="content4">
+        <div>
+        <div className="content4inner">
+          <div>01</div>
+        </div>
+        <h5> Submit a <br/> few details.</h5>
+        </div>
+        <div>
+        <div className="content4inner">
+          <div>01</div>
+        </div>
+        <h5>We will schedule a <br/> walk-through.</h5>
+        </div>
+        <div>
+        <div className="content4inner">
+          <div>01</div>
+        </div>
+        <h5>Get a quote!</h5>
+        </div>
+        
+      </div>
+
+
+      <div className="content5">
+        <div className="content5left">
+        <h1 style={{color:"#264279"}}>Impressive & Clean <br/> Businesses with CC <br/> commercial Cleaning</h1>
+        <p>Your office should reflect the professionalism and esteem of your company. CCC can deliver the impressive results your customers, clients, and employees expect when they walk into your business. Based in Birmingham, Alabama, we set the bar when it comes to commercial janitorial services that are ideal for office buildings, warehouses, plants, and factories. Simply put: nothing is left out, and no dirt is kept in!</p>
+        <h5>Call us today at:  <button>(205)484-9624</button></h5>
+        </div>
+        <div className="content5right">
+
+          <img src={image2} alt=""/>
         </div>
       </div>
     </>
