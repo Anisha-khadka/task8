@@ -18,7 +18,7 @@
   margin-left: 20px;
 }
 .header div i {
-  padding-top: 14px;
+  padding-top: 5px;
 }
 .headerright {
   background-color: #f69400;
@@ -464,7 +464,7 @@ margin-top: -160px;
 }
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 634px) {
   .headerleft {
     font-size: 10px;
   }
@@ -481,6 +481,7 @@ margin-top: -160px;
 
   .slide button {
     margin-top: -320px;
+
   }
   .content2 {
     flex-wrap: wrap;
@@ -512,6 +513,12 @@ margin-top: -160px;
   .contact{
     flex-wrap: wrap;
   }
+  .contactleft img{
+    width: 100%;
+   }
+   .contactright{
+    margin-right: 10px;
+   }
   .footer{
    height: 50vh;
 
@@ -527,5 +534,51 @@ margin-top: -160px;
   .footer h1, .footer ul{
     padding-left: 10px;
   }
+ 
+}
+
+@media only screen and (max-width: 1040px) {
+  .content2 {
+    flex-wrap: wrap;
+    padding: 35px 20px;
+  }
+  .content2right{
+    padding-top: 100px;
+  }
+  .slide button {
+    margin-top: -320px;
+
+  }
+
+  .content4 {
+    flex-wrap: wrap;
+  }
+  .content5 {
+
+    padding: 60px 10px 0px 10px;
+  }
+  .contact{
+    flex-wrap: wrap;
+  }
+  .contactleft img{
+   width: 100%;
+  }
+
+  .footer{
+    height: 50vh;
+ 
+     padding: 60px 0px 0px 0px;
+   }
+   .footerup ul li i{
+   
+     margin-right: 9px;
+   
+   
+   }
+ 
+   .footer h1, .footer ul{
+     padding-left: 10px;
+   }
+  
  
 }
