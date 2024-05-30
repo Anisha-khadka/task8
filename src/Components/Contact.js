@@ -1,7 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import image1 from "../Images/img16.png";
+import "../style.css";
 
 export default function Contact() {
+  const [firstName, setFirstname] = useState("");
+  const [lastName, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [inputtext, setInputtext] = useState("");
+  const [successmsg, setSucessmsg] = useState("");
+  const [error, setError] = useState({});
+  const saveInfo = (e) => {
+    e.preventDefault();
+    const errors = {};
+    const obj = {
+      firstName,
+      lastName,
+      email,
+      number,
+      inputtext,
+    };
+    if (firstName === "") errors.firstName = "Firstname is required";
+    if (lastName === "") errors.lastName = "lastname is required";
+    if (email === "") errors.email = "Email is required";
+    if (number === "" || number.length!==10) errors.number = "10 digit Phoneno. is required";
+    if (inputtext === "") errors.inputtext = "message is required";
+
+    setError(errors);
+    if (Object.keys(errors).length === 0) {
+      localStorage.setItem("contacts", JSON.stringify(obj));
+      setSucessmsg("success!!");
+      setFirstname("");
+      setLastname("");
+      setEmail("");
+      setNumber("");
+      setInputtext("");
+
+      //clear the success msg
+      setTimeout(() => {
+        setSucessmsg("");
+      }, 1000);
+    }
+  };
+
   return (
     <>
       <div className="contact">
@@ -37,30 +78,96 @@ export default function Contact() {
           </div>
         </div>
 
-
-
         <div className="contactright">
-        <div class="form" id="form">
-    <div>
-        <input type="text" id="firstname" placeholder="First name"/>
-        <input type="text" id="lastname" placeholder="Last name"/>
+          <div class="form" id="form">
+            <div>
+              <input
+                type="text"
+                id="firstname"
+                placeholder="First name"
+                value={firstName}
+                onChange={(e) => setFirstname(e.target.value)}
+              />
 
-    </div>
-    <div>
-        <input type="email" id="emailaddress" placeholder="Email address"/>
-        <input type="number" id="number" placeholder="Phone no."/>
+              {error.firstName && (
+                <p style={{ color: "red", padding: "10px" }}>
+                  !{error.firstName}
+                </p>
+              )}
+              <input
+                type="text"
+                id="lastname"
+                placeholder="Last name"
+                value={lastName}
+                onChange={(e) => setLastname(e.target.value)}
+              />
+              {error.lastName && (
+                <p style={{ color: "red", padding: "10px" }}>
+                  !{error.lastName}
+                </p>
+              )}
+            </div>
+            <div>
+              <input
+                type="email"
+                id="emailaddress"
+                placeholder="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {error.email && (
+                <p style={{ color: "red", padding: "10px" }}>!{error.email}</p>
+              )}
+              <input
+                type="number"
+                id="number"
+                placeholder="Phone no."
+                value={number}
+                onChange={(e) => setNumber(e.target.value)}
+              />
+              {error.number && (
+                <p style={{ color: "red", padding: "10px" }}>!{error.number}</p>
+              )}
+            </div>
 
-    </div>
-    
-    <textarea id="inputText"  name="inputText" placeholder="Message..." rows="4" cols="47" style={{resize:"none"}}></textarea><br/>
-  <button onclick="storemsg()">Send Message</button>
-  <div class="polygon">
-      <p>Schedule an Appointment</p>
-  </div>
+            <textarea
+              id="inputText"
+              name="inputText"
+              placeholder="Message..."
+              rows="4"
+              cols="47"
+              style={{ resize: "none" }}
+              value={inputtext}
+              onChange={(e) => setInputtext(e.target.value)}
+            ></textarea>
+
+            {error.inputtext && (
+              <p style={{ color: "red", padding: "10px" }}>
+                !{error.inputtext}
+              </p>
+            )}
+            <br />
+            <button onClick={saveInfo}>Send Message</button>
+            {successmsg && (
+              <p
+                style={{
+                  color: "white",
+                  backgroundColor: "green",
+                  width: "80px",
+                  height: "30px",
+                  margin: "10px",
+                  textAlign: "center",
+                  borderRadius: "5px",
+                }}
+              >
+                {successmsg}
+              </p>
+            )}
+            <div class="polygon">
+              <p>Schedule an Appointment</p>
+            </div>
+          </div>
         </div>
-    </div>
-          
-        
       </div>
     </>
   );
