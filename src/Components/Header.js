@@ -1,5 +1,6 @@
 import React from "react";
 import image1 from "../Images/image1.png";
+import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <>
@@ -27,10 +28,10 @@ export default function Header() {
         </div>
         <div className="navbarright">
         <ul>
-          <li>Home</li>
-          <li>Cleaning Services</li>
-          <li>Floor Care</li>
-          <li>Contact us</li>
+         <li><Link className="nabar" to="/">Home</Link></li> 
+          <li><Link className="nabar" to="/cleaning">Cleaning Services</Link></li>
+          <li><Link className="nabar" to="/about">About us</Link></li>
+          <li><Link className="nabar" to="/register">Contact us</Link></li>
         </ul>
         </div>
       </div>

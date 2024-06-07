@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import image1 from "../Images/img16.png";
 import "../style.css";
+import { useHotkeys } from "react-hotkeys-hook";
 
 export default function Contact() {
   const [firstName, setFirstname] = useState("");
@@ -11,7 +12,9 @@ export default function Contact() {
   const [successmsg, setSucessmsg] = useState("");
   const [error, setError] = useState({});
   const saveInfo = (e) => {
+   if (e) {
     e.preventDefault();
+  }
     const errors = {};
     const obj = {
       firstName,
@@ -42,6 +45,15 @@ export default function Contact() {
       }, 1000);
     }
   };
+
+  useHotkeys("enter",(e)=>{
+    console.log("Event object:", e);
+    e.preventDefault();
+    saveInfo();
+
+  },
+  { enableOnFormTags: ["input", "select", "textarea"] }
+)
 
   return (
     <>

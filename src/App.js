@@ -1,20 +1,39 @@
 
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Contact from './Components/Contact';
-import Content from './Components/Content';
+
 import Footer from './Components/Footer';
 import Header from './Components/Header';
-import Slider from './Components/Slider';
+
 import "./style.css"
+import Login from './Pages/Login';
+import Home from './Pages/Home';
+
+import Cleaning from './Pages/Cleaning';
+
+import About from './Pages/About';
+import Register from './Pages/Register';
 
 function App() {
   return (
     <>
+  
     <Header/>
-    <Slider/>
-    <Content/>
-    <Contact/>
+ 
+  
+    <Routes>
+    <Route path='/' Component={Home}/>
+    <Route path='/about' Component={About}/>
+      <Route path='/login' Component={Login}/>
+      <Route path='/register' Component={Register}/>
+      <Route path='/cleaning' Component={Cleaning}/>
+
+      
+
+    </Routes>
     <Footer/>
+
+    
     </>
   );
 }

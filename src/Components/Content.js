@@ -2,6 +2,7 @@ import React from "react";
 import image1 from "../Images/img10.png";
 import { Category1 } from "./Category1";
 import image2 from "../Images/img15.png"
+
 export default function Content() {
   return (
     <>
